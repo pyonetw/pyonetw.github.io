@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="/reveal/css/reset.css">
+		<link rel="stylesheet" href="/reveal/css/reveal.css">
+		<link rel="stylesheet" href="/reveal/css/theme/black-main.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="/reveal/lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement('link');
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '/reveal/css/print/pdf.css' : '/reveal/css/print/paper.css';
+			document.getElementsByTagName('head')[0].appendChild(link);
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section class="text-left">
+					<h1>Pyone Code School</h1>
+					<hr>
+					<ol>
+						<li><a target="_blank" href="/reveal/apcs1">APCS－概念篇</a></li>
+						<li><a target="_blank" href="/reveal/apcs2">APCS－備戰篇</a></li>
+					</ol>
+				</section>
+			</div>
+		</div>
+
+		<script src="/reveal/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: '/reveal/plugin/markdown/marked.js' },
+					{ src: '/reveal/plugin/markdown/markdown.js' },
+					{ src: '/reveal/plugin/notes/notes.js', async: true },
+					{ src: '/reveal/plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
