@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <meta name="description" content="碼寶程式教育中心初級班專用教材">
+    <meta name="author" content="Python Code School">
+    <title>Turtle 海龜繪圖程式 | 碼寶程式教育中心</title>
+    <link rel="icon" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/monokai-sublime.min.css">
+    <link rel="stylesheet" href="/static/main.css?191223">
+    <link rel="canonical" href="https://pyone.tw/">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark navbar-pyone">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#home-menu" aria-controls="home-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#home">Pyone</a>
+
+      <div class="collapse navbar-collapse" id="home-menu">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link nav-home" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://repl.it/languages/python3" target="_blank">repl.py</a></li>
+            <li class="nav-item" id="ex-count"><a class="nav-link ex-count" href="#"></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div id="home" class="jumbotron jumbotron-pyone">
+      <div class="container">
+        <h1>Turtle</h1>
+        <p class="lead">Turtle 海龜繪圖程式</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="sec01" class="section-divider"></div>
+      <section>
+        <h2 class="text-primary">Turtle 海龜繪圖程式</h2>
+
+        <h4>一條直線</h4>
+        <pre>
+            <code class="python">
+            import turtle
+            window = turtle.Screen()
+            turtle.forward(100)
+            window.exitonclick()
+            </code>
+        </pre>
+
+        <h4>三條不同色線</h4>
+        <pre>
+            <code class="python">
+            import turtle
+            window = turtle.Screen()
+            turtle.color('green') 
+            turtle.forward(100) 
+            turtle.right(45) 
+            turtle.color('blue') 
+            turtle.forward(50) 
+            turtle.right(45) 
+            turtle.color('pink') 
+            turtle.forward(100)
+            window.exitonclick()
+            </code>
+        </pre>
+
+        <h4>正方形</h4>
+        <pre>
+            <code class="python">
+            import turtle
+
+            window = turtle.Screen()
+
+            for step in range(4):
+                turtle.forward(100) 
+                turtle.right(90) 
+
+            window.exitonclick()
+            </code>
+        </pre>
+
+        <h4>田方形</h4>
+        <pre>
+            <code class="python">
+            import turtle
+
+            window = turtle.Screen()
+
+            for steps in range(4):
+                turtle.forward(100)
+                turtle.right(90)
+                for moresteps in range(4):
+                    turtle.forward(50)
+                    turtle.right(90)
+
+            window.exitonclick()
+            </code>
+        </pre>
+
+        <h4>星星</h4>
+        <pre>
+            <code class="python">
+            import turtle 
+
+            star = turtle.Turtle()
+
+            for i in range(5):
+                star.forward(100)
+                star.right(144)
+                
+            turtle.done()
+            </code>
+        </pre>
+
+        <h4>五角星星</h4>
+        <pre>
+            <code class="python">
+            import turtle
+
+            window = turtle.Screen()
+
+            for steps in range(5):
+                turtle.forward(100)
+                turtle.right(360/5)
+                for moresteps in range(5):
+                    turtle.forward(50)
+                    turtle.right(360/5)
+
+            window.exitonclick()
+            </code>
+        </pre>
+
+        <h4>多邊形</h4>
+        <pre>
+            <code class="python">
+            import turtle 
+
+            polygon = turtle.Turtle()
+            num_sides = 6
+            side_length = 70
+            angle = 360.0 / num_sides 
+
+            for i in range(num_sides):
+                polygon.forward(side_length)
+                polygon.right(angle)
+                
+            turtle.done()
+            </code>
+        </pre>
+
+        <h4>六角星星</h4>
+        <pre>
+            <code class="python">
+            import turtle
+
+            window = turtle.Screen()
+            num_sides = 6
+
+            for steps in range(num_sides):
+                turtle.forward(100)
+                turtle.right(360/num_sides)
+                for moresteps in range(num_sides):
+                    turtle.forward(50)
+                    turtle.right(360/num_sides)
+
+            window.exitonclick()
+            </code>
+        </pre>
+
+        <h4>圓形</h4>
+        <pre>
+            <code class="python">
+            import turtle
+
+            window = turtle.Screen()
+            turtle.speed(10)      
+            circles = 6
+            angle = 360/circles
+
+            for i in range(circles):   
+                turtle.circle(50)   
+                turtle.penup()      
+                turtle.forward(100)  
+                turtle.right(angle)
+                turtle.pendown() 
+
+            window.exitonclick()
+            </code>
+        </pre>
+
+        <h4>點網格</h4>
+        <pre>
+            <code class="python">
+            import turtle
+            from random import choice 
+
+            dot_grid = turtle.Turtle()
+            dot_distance = 25
+            width = 6
+            height = 6
+            colors = ('red', 'green', 'blue')
+
+            dot_grid.penup()
+            for y in range(height):
+                for i in range(width):
+                    dot_grid.color(choice(colors))
+                    dot_grid.dot()
+                    dot_grid.forward(dot_distance)
+                dot_grid.backward(dot_distance * width)
+                dot_grid.right(90)
+                dot_grid.forward(dot_distance)
+                dot_grid.left(90)
+                
+            turtle.done()
+            </code>
+        </pre>
+      </section>
+
+
+      <hr class="footer-hr">
+
+      <footer>
+        <p>&copy; 2020 碼寶程式教育中心</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/static/jquery.slim.min.js"></script>
+    <script src="/static/popper.min.js"></script>
+    <script src="/static/bootstrap.min.js"></script>
+    <script src="/static/highlight.min.js"></script>
+    <script src="/static/clipboard.min.js"></script>
+    <script> hljs.initHighlightingOnLoad(); </script>
+    <script src="/static/main.js"></script>
+  </body>
+</html>

@@ -115,6 +115,43 @@ ul.none {
     text-align: center;
 }
 
+.section-chapter h2 {
+    color: #007bff;
+}
+
+.section-chapter h3 {
+    color: #35362f;
+}
+
+.section-chapter h4 {
+    color: #17a2b8;
+}
+
+.section-chapter h4.piece:hover {
+    cursor: pointer;
+}
+
+.section-chapter h5 {
+    font-size: 22px;
+    color: #0ea60e;
+}
+
+.section-chapter .code-desc,
+.section-chapter .memo-desc {
+    padding: 10px;
+    font-size: 18px;
+}
+
+.section-chapter .code-desc {
+    background-color: #eee;
+    border-left: 5px solid #666;
+}
+
+.section-chapter .memo-desc {
+    background-color: #ffe3e1;
+    border-left: 5px solid #ce2516;
+}
+
 .section-divider {
     padding-top: 60px;
 }
