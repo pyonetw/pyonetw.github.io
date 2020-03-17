@@ -2,7 +2,8 @@ $(function() {
     var pycode = $('code.python').length;
     var bodyHTML = $('body').html();
     var excount = (bodyHTML.match(/ex\(\+\)/g) || []).length;
-    $('#ex-count > a.nav-link').text(pycode+' : '+excount);
+    var pyex = excount == 0 ? pycode : pycode+' : '+excount;
+    $('#ex-count > a.nav-link').text(pyex);
 });
 
 // hide menu after click menu item
