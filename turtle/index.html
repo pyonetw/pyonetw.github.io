@@ -10,7 +10,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="stylesheet" href="/static/bootstrap.min.css">
     <link rel="stylesheet" href="/static/monokai-sublime.min.css">
-    <link rel="stylesheet" href="/static/main.css?191223">
+    <link rel="stylesheet" href="/static/main.css?201009">
     <link rel="canonical" href="https://pyone.tw/">
   </head>
 
@@ -59,13 +59,13 @@
             <code class="python">
             import turtle
             window = turtle.Screen()
-            turtle.color('green') 
-            turtle.forward(100) 
-            turtle.right(45) 
-            turtle.color('blue') 
-            turtle.forward(50) 
-            turtle.right(45) 
-            turtle.color('pink') 
+            turtle.color('green')
+            turtle.forward(100)
+            turtle.right(45)
+            turtle.color('blue')
+            turtle.forward(50)
+            turtle.right(45)
+            turtle.color('pink')
             turtle.forward(100)
             window.exitonclick()
             </code>
@@ -79,8 +79,8 @@
             window = turtle.Screen()
 
             for step in range(4):
-                turtle.forward(100) 
-                turtle.right(90) 
+                turtle.forward(100)
+                turtle.right(90)
 
             window.exitonclick()
             </code>
@@ -107,14 +107,14 @@
         <h4>星星</h4>
         <pre>
             <code class="python">
-            import turtle 
+            import turtle
 
             star = turtle.Turtle()
 
             for i in range(5):
                 star.forward(100)
                 star.right(144)
-                
+
             turtle.done()
             </code>
         </pre>
@@ -140,17 +140,17 @@
         <h4>多邊形</h4>
         <pre>
             <code class="python">
-            import turtle 
+            import turtle
 
             polygon = turtle.Turtle()
             num_sides = 6
             side_length = 70
-            angle = 360.0 / num_sides 
+            angle = 360.0 / num_sides
 
             for i in range(num_sides):
                 polygon.forward(side_length)
                 polygon.right(angle)
-                
+
             turtle.done()
             </code>
         </pre>
@@ -180,16 +180,16 @@
             import turtle
 
             window = turtle.Screen()
-            turtle.speed(10)      
+            turtle.speed(10)
             circles = 6
             angle = 360/circles
 
-            for i in range(circles):   
-                turtle.circle(50)   
-                turtle.penup()      
-                turtle.forward(100)  
+            for i in range(circles):
+                turtle.circle(50)
+                turtle.penup()
+                turtle.forward(100)
                 turtle.right(angle)
-                turtle.pendown() 
+                turtle.pendown()
 
             window.exitonclick()
             </code>
@@ -199,7 +199,7 @@
         <pre>
             <code class="python">
             import turtle
-            from random import choice 
+            from random import choice
 
             dot_grid = turtle.Turtle()
             dot_distance = 25
@@ -217,7 +217,7 @@
                 dot_grid.right(90)
                 dot_grid.forward(dot_distance)
                 dot_grid.left(90)
-                
+
             turtle.done()
             </code>
         </pre>

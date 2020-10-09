@@ -10,7 +10,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="stylesheet" href="/static/bootstrap.min.css">
     <link rel="stylesheet" href="/static/monokai-sublime.min.css">
-    <link rel="stylesheet" href="/static/main.css?191223">
+    <link rel="stylesheet" href="/static/main.css?201009">
     <link rel="canonical" href="https://pyone.tw/">
   </head>
 
@@ -95,14 +95,14 @@
             # 前後須使用一致的引號
             # 通常叫做「字串」
             print('Hickory Dickory Dock! The mouse ran up the clock')
-            print("Hickory Dickory Dock! The mouse ran up the clock") 
+            print("Hickory Dickory Dock! The mouse ran up the clock")
             </code>
         </pre>
 
         <pre>
             <code class="python">
-            print("It's a beautiful day in the neighborhood") 
-            print('It's a beautiful day in the neighborhood') 
+            print("It's a beautiful day in the neighborhood")
+            print('It's a beautiful day in the neighborhood')
             </code>
         </pre>
 
@@ -132,7 +132,7 @@
             # 使用 3 個引號
             # 連續 3 個單引號或雙引號
             # 前後須使用一致的引號
-            print("""Hickory Dickory Dock! 
+            print("""Hickory Dickory Dock!
             The mouse ran up the clock""")
             print()
             print('''Hickory Dickory Dock!
@@ -144,7 +144,7 @@
         <pre>
             <code class="python">
             # 這不算是字串
-            print(Hickory Dickory Dock) 
+            print(Hickory Dickory Dock)
             # 字串中有單引號，前後應該用雙引號
             print('It's a small world')
             # 前面是雙引號，後面是單引號，不一致
@@ -204,7 +204,7 @@
             # 改為 Mary
             name = "Mary"
             # 再輸出一次就變成是 Mary
-            print(name) 
+            print(name)
             </code>
         </pre>
 
@@ -222,7 +222,7 @@
         <h4>變數命名格式</h4>
         <pre>
             <code class="html">
-            # camelCase, myFullName 
+            # camelCase, myFullName
             # PascalCase, MyFullName
             # snake_case, my_full_name
             </code>
@@ -255,16 +255,16 @@
             firstName = input("What is your first name? ")
             lastName = input("What is your last name? ")
             print("Hello" + firstName + lastName)
-            print("Hello " + firstName + " " + lastName) 
+            print("Hello " + firstName + " " + lastName)
             </code>
         </pre>
 
         <pre>
             <code class="python">
             animal = input("What is your favorite animal? " )
-            building = input("Name a famous building: ") 
-            color = input("What is your favorite color? ") 
-            print("Hickory Dickory Dock!") 
+            building = input("Name a famous building: ")
+            color = input("What is your favorite color? ")
+            print("Hickory Dickory Dock!")
             print("The " + color + " " + animal + " ran up the " + building)
             </code>
         </pre>
@@ -273,10 +273,10 @@
         <pre>
             <code class="python">
             message = 'Hello world'
-            # 全部變小寫 
-            print(message.lower()) 
+            # 全部變小寫
+            print(message.lower())
             # 全部變大寫
-            print(message.upper()) 
+            print(message.upper())
             # 大寫變小寫，小寫變大寫
             print(message.swapcase())
             # 注意！因為沒有設 message = message.swapcase()
@@ -288,16 +288,16 @@
         <h4>其他字串函式</h4>
         <pre>
             <code class="python">
-            message = 'Hello world' 
+            message = 'Hello world'
             # 在 message 中找 'world'，找得到就回傳第一個字元的 index (位置)
             # index 從 0 開始，'H' 的 index 就是 0
             # 找到 'world'，回傳 'w' 的 index 就是 6
-            # 找不到會回傳 -1 
-            print(message.find('world')) 
+            # 找不到會回傳 -1
+            print(message.find('world'))
             # 計算字串中有幾個 'o'
             print(message.count('o'))
             # 第一個單字的首字母大寫
-            print(message.capitalize()) 
+            print(message.capitalize())
             # 將 'Hello' 取代為 'Hi'
             print(message.replace('Hello', 'Hi'))
             </code>
@@ -307,15 +307,15 @@
         <pre>
             <code class="python">
             # 沒有用引號將字串括住
-            message = Hello world 
+            message = Hello world
             # 變數名稱不能用數字開頭
-            23message = 'Hello world' 
+            23message = 'Hello world'
             # 變數名稱中不能含有空白
-            New message = 'Hi there' 
+            New message = 'Hi there'
             # upper() 函式不用設定參數，但要加括號
-            print(message.upper) 
+            print(message.upper)
             # mesage 變數名稱打錯，應該是 message
-            print(mesage.lower()) 
+            print(mesage.lower())
             # count() 函式需要設定參數
             print(message.count())
             </code>
@@ -329,7 +329,7 @@
         <h4>用變數存取數值資料</h4>
         <pre>
             <code class="python">
-            age = 42 
+            age = 42
             print(age)
             </code>
         </pre>
@@ -337,13 +337,13 @@
         <h4>用數值資料或數值變數做算術運算</h4>
         <pre>
             <code class="python">
-            width = 20 
-            height = 5 
-            area = width * height 
+            width = 20
+            height = 5
+            area = width * height
             print(area)
-            perimeter = 2*width + 2*height 
+            perimeter = 2*width + 2*height
             print(perimeter)
-            perimeter = 2*(width+height) 
+            perimeter = 2*(width+height)
             print(perimeter)
             </code>
         </pre>
@@ -396,7 +396,7 @@
             # 以浮點數表示，預設小數位數為 6 位
             print("I have {0:f} cats".format(6))
             # 以浮點數表示，設定小數位數為 2 位
-            print("I have {0:.2f} cats".format(6)) 
+            print("I have {0:.2f} cats".format(6))
             </code>
         </pre>
 
@@ -414,9 +414,9 @@
         <h4>數字相加</h4>
         <pre>
             <code class="python">
-            salary = '5000' 
-            bonus = '500' 
-            payCheck = salary + bonus 
+            salary = '5000'
+            bonus = '500'
+            payCheck = salary + bonus
             print(payCheck)
             </code>
         </pre>
@@ -424,9 +424,9 @@
         <h4>數值相加</h4>
         <pre>
             <code class="python">
-            salary = 5000 
-            bonus = 500 
-            payCheck = salary + bonus 
+            salary = 5000
+            bonus = 500
+            payCheck = salary + bonus
             print(payCheck)
             </code>
         </pre>
@@ -450,7 +450,7 @@
         <h4>取得今天日期</h4>
         <pre>
             <code class="python">
-            import datetime 
+            import datetime
             print(datetime.date.today())
             </code>
         </pre>
@@ -458,8 +458,8 @@
         <h4>將日期存到變數</h4>
         <pre>
             <code class="python">
-            import datetime 
-            currentDate = datetime.date.today() 
+            import datetime
+            currentDate = datetime.date.today()
             print (currentDate)
             </code>
         </pre>
@@ -467,11 +467,11 @@
         <h4>分別存取日期的年月日</h4>
         <pre>
             <code class="python">
-            import datetime 
-            currentDate = datetime.date.today() 
-            print(currentDate) 
-            print(currentDate.year) 
-            print(currentDate.month) 
+            import datetime
+            currentDate = datetime.date.today()
+            print(currentDate)
+            print(currentDate.year)
+            print(currentDate.month)
             print(currentDate.day)
             </code>
         </pre>
@@ -487,8 +487,8 @@
             # %y 以 2 位數表示西元年份
             # %A 星期正寫
             # %a 星期縮寫
-            import datetime 
-            currentDate = datetime.date.today() 
+            import datetime
+            currentDate = datetime.date.today()
             print (currentDate.strftime('%d %b,%Y'))
             </code>
         </pre>
@@ -496,8 +496,8 @@
         <h4>含日期資訊的邀請卡訊息</h4>
         <pre>
             <code class="python">
-            import datetime 
-            currentDate = datetime.date.today() 
+            import datetime
+            currentDate = datetime.date.today()
             print(currentDate.strftime('Please attend our event %A, %B %d in the year %Y'))
             </code>
         </pre>
@@ -505,8 +505,8 @@
         <h4>邀請卡訊息</h4>
         <pre>
             <code class="python">
-            import datetime 
-            currentDate = datetime.date.today() 
+            import datetime
+            currentDate = datetime.date.today()
             print(currentDate.strftime('Please attend our event %A, %B %d in the year %Y'))
             </code>
         </pre>
@@ -514,7 +514,7 @@
         <h4>輸入生日</h4>
         <pre>
             <code class="python">
-            birthday = input("What is your birthday? ") 
+            birthday = input("What is your birthday? ")
             print("Your birthday is " + birthday)
             </code>
         </pre>
@@ -522,10 +522,10 @@
         <h4>用 strptime() 函式將字串轉成日期</h4>
         <pre>
             <code class="python">
-            import datetime 
-            birthday = input("What is your birthday? ") 
-            birthdate = datetime.datetime.strptime(birthday,"%m/%d/%Y").date() 
-            print("Your birth month is " + birthdate.strftime('%B')) 
+            import datetime
+            birthday = input("What is your birthday? ")
+            birthdate = datetime.datetime.strptime(birthday,"%m/%d/%Y").date()
+            print("Your birth month is " + birthdate.strftime('%B'))
             </code>
         </pre>
 
@@ -534,7 +534,7 @@
             <code class="python">
             import datetime
             nextBirthday = datetime.datetime.strptime('8/7/2019','%m/%d/%Y').date()
-            currentDate = datetime.date.today() 
+            currentDate = datetime.date.today()
             difference = nextBirthday - currentDate
             print(difference.days)
             </code>
@@ -544,8 +544,8 @@
         <pre>
             <code class="python">
             import datetime
-            currentDate = datetime.date.today() 
-            print(currentDate + datetime.timedelta(days=15)) 
+            currentDate = datetime.date.today()
+            print(currentDate + datetime.timedelta(days=15))
             print(currentDate + datetime.timedelta(hours=15))
             </code>
         </pre>
@@ -553,10 +553,10 @@
         <h4>分別存取時間的時分秒</h4>
         <pre>
             <code class="python">
-            import datetime 
-            currentTime = datetime.datetime.now() 
-            print(currentTime) 
-            print(currentTime.hour) 
+            import datetime
+            currentTime = datetime.datetime.now()
+            print(currentTime)
+            print(currentTime.hour)
             print(currentTime.minute)
             print(currentTime.second)
             </code>
@@ -571,8 +571,8 @@
             # %p AM or PM
             # %m 分
             # %S 秒
-            import datetime 
-            currentTime = datetime.datetime.now() 
+            import datetime
+            currentTime = datetime.datetime.now()
             print(datetime.datetime.strftime(currentTime,'%H:%M'))
             </code>
         </pre>
@@ -612,7 +612,7 @@
             # 沒有縮排表示和條件無關
             answer = input("Would you like express shipping? ")
             if answer == "yes":
-                print("That will be an extra $10") 
+                print("That will be an extra $10")
             print("Have a nice day")
             </code>
         </pre>
@@ -623,7 +623,7 @@
             answer = input("Would you like express shipping? ")
             # 將變數 answer 內容轉成小寫再判斷
             if answer.lower() == "yes":
-                print("That will be an extra $10") 
+                print("That will be an extra $10")
             print("Have a nice day")
             </code>
         </pre>
@@ -687,7 +687,7 @@
             <code class="python">
             deposit = input("how much would you like to deposit? ")
             if float(deposit) > 100:
-                freeToaster = True 
+                freeToaster = True
             if freeToaster:
                 print("enjoy your toaster")
             </code>
@@ -699,7 +699,7 @@
             freeToaster = False
             deposit= input("how much would you like to deposit? ")
             if float(deposit) > 100:
-                freeToaster = True 
+                freeToaster = True
             if freeToaster:
                 print("enjoy your toaster")
             </code>
@@ -709,7 +709,7 @@
         <pre>
             <code class="python">
             deposit = input("How much would you like to deposit? ")
-            if deposit > 100 
+            if deposit > 100
                 print("You get a free toaster!")
             freeToaster = true
             else:
@@ -727,12 +727,12 @@
         <pre>
             <code class="python">
             # 一個條件可能會因為不同情況，導致不同結果
-            country = input("Where are you from? " ) 
+            country = input("Where are you from? " )
             # 在 if 決策式中使用 elif 加以比較其他情況
             if country == "CANADA":
-                print("Hello") 
+                print("Hello")
             elif country == "GERMANY":
-                print("Guten Tag") 
+                print("Guten Tag")
             elif country == "FRANCE":
                 print("Bonjour")
             </code>
@@ -740,11 +740,11 @@
 
         <pre>
             <code class="python">
-            country = input("Where are you from? " ) 
+            country = input("Where are you from? " )
             if country == "CANADA":
-                print("Hello") 
+                print("Hello")
             elif country == "GERMANY":
-                print("Guten Tag") 
+                print("Guten Tag")
             elif country == "FRANCE":
                 print("Bonjour")
             else:
@@ -756,8 +756,8 @@
         <pre>
             <code class="python">
             # 使用 and 運算，必須所有條件成立才算成立
-            wonLottery = True 
-            bigWin = True 
+            wonLottery = True
+            bigWin = True
             if wonLottery and bigWin:
                 print("you can retire")
             </code>
@@ -767,8 +767,8 @@
         <pre>
             <code class="python">
             # 使用 or 運算，任何一個條件成立就算成立
-            saturday = True 
-            sunday = False 
+            saturday = True
+            sunday = False
             if saturday or sunday:
                 print("you can sleep in")
             </code>
@@ -829,9 +829,9 @@
         <h4>巢狀決策結構</h4>
         <pre>
             <code class="python">
-            monday = True 
-            freshCoffee = False 
-            if monday: 
+            monday = True
+            freshCoffee = False
+            if monday:
                 if not freshCoffee:
                     print("Go buy a coffee!")
                 print("I hate Mondays!")

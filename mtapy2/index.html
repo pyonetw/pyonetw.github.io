@@ -10,7 +10,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="stylesheet" href="/static/bootstrap.min.css">
     <link rel="stylesheet" href="/static/monokai-sublime.min.css">
-    <link rel="stylesheet" href="/static/main.css?191223">
+    <link rel="stylesheet" href="/static/main.css?201009">
     <link rel="canonical" href="https://pyone.tw/">
   </head>
 
@@ -143,7 +143,7 @@
             counter = 1
             while True:
                 print(counter)
-                if counter == 10: 
+                if counter == 10:
                     break
                 else:
                     counter += 1
@@ -179,13 +179,13 @@
             print('for loop')
             counter = 0
             for i in range(10):
-                counter += 1 
+                counter += 1
                 print(counter)
 
             print('while loop')
             counter = 0
             while counter != 10:
-                counter += 1 
+                counter += 1
                 print(counter)
             </code>
         </pre>
@@ -206,7 +206,7 @@
         <h4>用 list 儲存數值資料</h4>
         <pre>
             <code class="python">
-            scores = [78, 85, 62, 49, 98] 
+            scores = [78, 85, 62, 49, 98]
             print(scores)
             </code>
         </pre>
@@ -222,7 +222,7 @@
         <h4>以索引編號從 list 中取出 1 個數值資料</h4>
         <pre>
             <code class="python">
-            scores = [78, 85, 62, 49, 98] 
+            scores = [78, 85, 62, 49, 98]
             print(scores[3])
             </code>
         </pre>
@@ -239,9 +239,9 @@
         <h4>改變 list 中的字串資料</h4>
         <pre>
             <code class="python">
-            guests = ['Christopher', 'Susan', 'Bill', 'Satya'] 
-            print("first value is " + guests[0]) 
-            guests[0] = 'Steve' 
+            guests = ['Christopher', 'Susan', 'Bill', 'Satya']
+            print("first value is " + guests[0])
+            guests[0] = 'Steve'
             print("first value is now " + guests[0])
             </code>
         </pre>
@@ -251,7 +251,7 @@
             <code class="python">
             guests = ['Christopher', 'Susan', 'Bill', 'Satya']
             print(guests)
-            guests.append('Steve') 
+            guests.append('Steve')
             print(guests)
             print(guests[-1])
             </code>
@@ -262,7 +262,7 @@
             <code class="python">
             guests = ['Christopher', 'Susan', 'Bill', 'Satya']
             print(guests)
-            guests.remove('Christopher') 
+            guests.remove('Christopher')
             print(guests)
             print(guests[0])
             </code>
@@ -273,7 +273,7 @@
             <code class="python">
             guests = ['Christopher', 'Susan', 'Bill', 'Satya']
             print(guests)
-            del guests[0] 
+            del guests[0]
             print(guests)
             print(guests[0])
             </code>
@@ -307,7 +307,7 @@
         <pre>
             <code class="python">
             guests = ['Christopher', 'Susan', 'Bill', 'Satya']
-            nbrEntries = len(guests) 
+            nbrEntries = len(guests)
             print(nbrEntries)
             print()
             for steps in range(nbrEntries):
@@ -330,7 +330,7 @@
             guests = ['Christopher', 'Susan', 'Bill', 'Satya']
             print(guests)
             print()
-            guests.sort() 
+            guests.sort()
             print(guests)
             for guest in guests:
                 print(guest)
@@ -344,7 +344,7 @@
             name = " "
             while name != "DONE":
                 name = input("Enter guest name (enter DONE if no more names) : ")
-                guests.append(name) 
+                guests.append(name)
             guests.sort()
             for guest in guests:
                 print(guest)
@@ -359,7 +359,7 @@
                 name = input("Enter guest name (enter DONE if no more names) : ")
                 if name.upper() != "DONE":
                     guests.append(name)
-            guests.sort() 
+            guests.sort()
             for guest in guests:
                 print(guest)
             </code>
@@ -382,8 +382,8 @@
         <h4>開啟一個檔案準備寫入資料</h4>
         <pre>
             <code class="python">
-            fileName = "GuestList.txt" 
-            accessMode = "w" 
+            fileName = "GuestList.txt"
+            accessMode = "w"
             myFile = open(fileName, accessMode)
             </code>
         </pre>
@@ -391,9 +391,9 @@
         <h4>開啟檔案後寫入資料</h4>
         <pre>
             <code class="python">
-            fileName = "GuestList.txt" 
-            accessMode = "w" 
-            myFile = open(fileName, accessMode) 
+            fileName = "GuestList.txt"
+            accessMode = "w"
+            myFile = open(fileName, accessMode)
             myFile.write("Hi there! ")
             myFile.write("How are you?")
             </code>
@@ -401,9 +401,9 @@
 
         <pre>
             <code class="python">
-            fileName = "GuestList.txt" 
-            accessMode = "w" 
-            myFile = open(fileName, accessMode) 
+            fileName = "GuestList.txt"
+            accessMode = "w"
+            myFile = open(fileName, accessMode)
             myFile.write("Hi there!\n")
             myFile.write("How are you?")
             # 關閉檔案
@@ -414,9 +414,9 @@
         <h4>來賓資料建檔</h4>
         <pre>
             <code class="python">
-            fileName = "GuestList.csv" 
-            accessMode = "w" 
-            myFile = open(fileName, accessMode) 
+            fileName = "GuestList.csv"
+            accessMode = "w"
+            myFile = open(fileName, accessMode)
             while True:
                 new_guest = input('Continue or quit >')
                 if new_guest == 'quit':
@@ -441,7 +441,7 @@
             <code class="python">
             import csv
             fileName = "GuestList.csv"
-            accessMode = "r" 
+            accessMode = "r"
             with open(fileName, accessMode) as myCSVFile:
                 dataFromFile = csv.reader(myCSVFile)
                 for row in dataFromFile:
@@ -453,7 +453,7 @@
             <code class="python">
             import csv
             fileName = "GuestList.csv"
-            accessMode = "r" 
+            accessMode = "r"
             with open(fileName, accessMode) as myCSVFile:
                 dataFromFile = csv.reader(myCSVFile)
                 for row in dataFromFile:
@@ -494,7 +494,7 @@
             def printMessage(message):
                 print(message)
                 return
-                
+
             printMessage('Hello world!')
             </code>
         </pre>
@@ -505,7 +505,7 @@
                 message = greeting + ', ' + name
                 print(message)
                 return
-                
+
             displayMessage('Hi', 'Christopher')
             </code>
         </pre>
@@ -548,9 +548,9 @@
         <h4>邏輯錯誤</h4>
         <pre>
             <code class="python">
-            salary = '5000' 
-            bonus = '500' 
-            payCheck = salary + bonus 
+            salary = '5000'
+            bonus = '500'
+            payCheck = salary + bonus
             print(payCheck)
             </code>
         </pre>
@@ -558,11 +558,11 @@
         <h4>兩數相除</h4>
         <pre>
             <code class="python">
-            first = input("Enter the first number: ") 
-            second = input("Enter the second number: ") 
-            firstNumber = float(first) 
-            secondNumber = float(second) 
-            result = firstNumber / secondNumber 
+            first = input("Enter the first number: ")
+            second = input("Enter the second number: ")
+            firstNumber = float(first)
+            secondNumber = float(second)
+            result = firstNumber / secondNumber
             print(first + " / " + second + " = " + str(result))
             </code>
         </pre>
@@ -570,10 +570,10 @@
         <h4>錯誤處理</h4>
         <pre>
             <code class="python">
-            first = input("Enter the first number: ") 
-            second = input("Enter the second number: ") 
-            firstNumber = float(first) 
-            secondNumber = float(second) 
+            first = input("Enter the first number: ")
+            second = input("Enter the second number: ")
+            firstNumber = float(first)
+            secondNumber = float(second)
             try:
                 result = firstNumber / secondNumber
                 print(first + " / " + second + " = " + str(result))
@@ -586,10 +586,10 @@
         <pre>
             <code class="python">
             import sys
-            first = input("Enter the first number: ") 
-            second = input("Enter the second number: ") 
-            firstNumber = float(first) 
-            secondNumber = float(second) 
+            first = input("Enter the first number: ")
+            second = input("Enter the second number: ")
+            firstNumber = float(first)
+            secondNumber = float(second)
             try:
                 result = firstNumber / secondNumber
                 print(first + " / " + second + " = " + str(result))
@@ -604,10 +604,10 @@
         <pre>
             <code class="python">
             import sys
-            first = input("Enter the first number: ") 
-            second = input("Enter the second number: ") 
-            firstNumber = float(first) 
-            secondNumber = float(second) 
+            first = input("Enter the first number: ")
+            second = input("Enter the second number: ")
+            firstNumber = float(first)
+            secondNumber = float(second)
             try:
                 result = firstNumber / secondNumber
                 print (first + " / " + second + " = " + str(result))
@@ -624,10 +624,10 @@
         <pre>
             <code class="python">
             import sys
-            first = input("Enter the first number: ") 
-            second = input("Enter the second number: ") 
-            firstNumber = float(first) 
-            secondNumber = float(second) 
+            first = input("Enter the first number: ")
+            second = input("Enter the second number: ")
+            firstNumber = float(first)
+            secondNumber = float(second)
             try:
                 result = firstNumber / secondNumber
                 print (first + " / " + second + " = " + str(result))
@@ -640,16 +640,16 @@
         <pre>
             <code class="python">
             import sys
-            first = input("Enter the first number: ") 
-            second = input("Enter the second number: ") 
-            firstNumber = float(first) 
-            secondNumber = float(second) 
+            first = input("Enter the first number: ")
+            second = input("Enter the second number: ")
+            firstNumber = float(first)
+            secondNumber = float(second)
             try:
                 result = firstNumber / secondNumber
                 print (first + " / " + second + " = " + str(result))
             except ZeroDivisionError:
                 print("The answer is infinity")
-                sys.exit() 
+                sys.exit()
             print("This message only displays if there is no error!")
             </code>
         </pre>
