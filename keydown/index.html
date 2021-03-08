@@ -35,9 +35,9 @@
                 <hr>
             </div>
         </div>
-       
-        
-        <div class="row" style="height:400px;"> 
+
+
+        <div class="row" style="height:400px;">
             <div class="col-lg-12 text-center" id="img-frame">
             </div>
         </div>
@@ -84,7 +84,7 @@
         </div>
 	</div>
 
-<script src="/static/jquery.slim.min.js"></script>
+<script src="/static/jquery.min.js"></script>
 <script type="text/javascript">
     $(function() {
         $('body').on('keydown', function(event) {
@@ -94,7 +94,7 @@
         $('button[id^="btn"]').on('click', function() {
             showImage(this.id[3]);
         });
-    }); 
+    });
 
     function showImage(charCode) {
         var alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -104,7 +104,7 @@
                        "fab fa-node-js", "fab fa-opera", "fab fa-python", "fab fa-quora", "fab fa-react",
                        "fab fa-spotify", "fab fa-twitter", "fab fa-uber", "fab fa-vimeo", "fab fa-weixin",
                        "fab fa-xbox", "fab fa-yelp", "fab fa-amazon"]
-        var aryColor = ["#2A638C", "#F2A336", "#70A649", "#EE3633", "#108C8C", 
+        var aryColor = ["#2A638C", "#F2A336", "#70A649", "#EE3633", "#108C8C",
                         "#E97778", "#AD84C7", "#7998C9", "#968973", "#404040"]
         var iChar = alphabet.indexOf(charCode);
         if (iChar >= 0) {
