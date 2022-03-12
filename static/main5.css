@@ -2,11 +2,6 @@ body, button, html, input, select, textarea {
     font-family: "Microsoft JhengHei";
 }
 
-pre code {
-    font-size: 18px !important;
-    margin-left: -80px;
-}
-
 .navbar-collapse { 
     /* https://css-tricks.com/viewport-sized-typography/ */
     max-height: 100vh !important; 
@@ -17,7 +12,7 @@ pre code {
     padding: 3px 8px 2px 8px;
 }
 
-.navbar-pyone {
+.navbar-main {
     background-color: #333 !important;
 }
 
@@ -63,14 +58,14 @@ pre code {
     color: transparent;
 }
 
-.jumbotron-pyone {
+.jumbotron-main {
     padding-top: 80px;
     padding-bottom: 10px;
     border-radius: 0px;
     background-color: #4c4c4c !important;
 }
 
-.jumbotron-pyone * {
+.jumbotron-main * {
     color: #f8b147;
 }
 
@@ -78,24 +73,8 @@ pre code {
     cursor: pointer;
 }
 
-.btn-copy {
-    font-size: 14px;
-    border-radius: 0;
-}
-
-ul.outline {
-    list-style-type: square;
-    font-size: 16px;
-}
-
-ul.lead {
-    font-size: 18px;
-}
-
-ul.none {
-    list-style-type: none;
-    font-size: 16px;
-    padding-left: 12px;
+.btn-block {
+    width: 100%;
 }
 
 .section-area {
@@ -110,92 +89,8 @@ ul.none {
     border-bottom: solid 1px transparent;
 }
 
-.section-area div,
 .section-course div {
     text-align: center;
-}
-
-.section-chapter h2 {
-    color: #007bff;
-}
-
-.section-chapter h3 {
-    color: #35362f;
-}
-
-.section-chapter h4 {
-    color: #17a2b8;
-}
-
-.section-chapter h4.piece:hover {
-    cursor: pointer;
-}
-
-.section-chapter h5 {
-    font-size: 22px;
-    color: #0ea60e;
-}
-
-.section-chapter .code-desc,
-.section-chapter .memo-desc {
-    padding: 10px;
-    font-size: 18px;
-}
-
-.section-chapter .code-desc {
-    background-color: #eee;
-    border-left: 5px solid #666;
-}
-
-.section-chapter .memo-desc {
-    background-color: #ffe3e1;
-    border-left: 5px solid #ce2516;
-}
-
-.section-divider {
-    padding-top: 60px;
-}
-
-.area-divider {
-    padding-top: 30px;
-}
-
-.chapter-link {
-    padding: 30px 0;
-}
-.chapter-link div {
-    padding: 5px 20px;
-}
-
-.extra-link {
-    padding: 30px 0;
-}
-.extra-link div {
-    padding: 5px 20px;
-}
-
-section h4 {
-    padding-top: 30px;
-}
-
-img {
-    max-width: 100%;
-}
-
-img.hasborder {
-    border: solid 1px #666;
-}
-
-.texti-pyone {
-    color: #3e9a32;
-}
-
-.texti-vital {
-    color: #cc4444;
-}
-
-.alert-pyone {
-    padding-bottom: 5px;
 }
 
 .footer-hr {
