@@ -77,6 +77,20 @@ body, button, html, input, select, textarea {
     width: 100%;
 }
 
+.btn-info,
+.btn-info:focus,
+.btn-info:active {
+    color: #fff;
+    background-color: #2896ad;
+    border-color: #2896ad;
+}
+
+.btn-info:hover {
+    color: #fff;
+    background-color: #2e7d8e;
+    border-color: #2e7d8e;
+}
+
 .section-area {
     margin: 0;
     padding: 10px 0 10px 0;
