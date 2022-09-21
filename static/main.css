@@ -2,12 +2,6 @@ body, button, html, input, select, textarea {
     font-family: "Microsoft JhengHei";
 }
 
-.navbar-collapse { 
-    /* https://css-tricks.com/viewport-sized-typography/ */
-    max-height: 100vh !important; 
-    overflow-x: hidden !important; 
-}
-
 .navbar-toggler {
     padding: 3px 8px 2px 8px;
 }
@@ -66,7 +60,7 @@ body, button, html, input, select, textarea {
 }
 
 .jumbotron-main * {
-    color: #f8b147;
+    color: #fff;
 }
 
 .btn:hover {
@@ -109,6 +103,11 @@ body, button, html, input, select, textarea {
 
 .footer-hr {
     margin-top: 60px;
+}
+
+.texti-code,
+.texti-code * {
+    font-family: Consolas, "Microsoft JhengHei";
 }
 
 @media screen and (max-device-width: 640px) {
