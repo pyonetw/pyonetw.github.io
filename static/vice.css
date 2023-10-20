@@ -1,0 +1,75 @@
+body, button, html, input, select, textarea {
+    font-family: "Microsoft JhengHei";
+}
+
+body {
+    background-color: #f0f0f0;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    color: #1023e0;
+    font-size: 20px;
+}
+
+.ex-container {
+    padding: 20px 12%;
+}
+
+.text-topic {
+    color: #0f6ebe;
+}
+
+.text-danger {
+    color: #bd3333;
+}
+
+.text-success {
+    color: #328401;
+}
+
+ul {
+    list-style-type: square;
+}
+
+p {
+    line-height: 32px;
+}
+
+p, li {
+    font-size: 18px;
+}
+
+pre {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f6e4dc;
+}
+
+pre code {
+    font-size: 18px;
+}
+
+li {
+	padding: 5px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    font-size: 18px;
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px 5px;
+}
+
+.texti-datain {
+    color: #d60d5f;
+    font-weight: bold;
+}
