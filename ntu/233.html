@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="utf-8">
+    <title>第三週練習：牆壁漆油漆</title>
+    <link rel="icon" href="/favicon.png">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/vice.css?250715">
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-3">第三週練習：牆壁漆油漆</h1>
+
+        <h2>題目來源</h2>
+        <p class="text-danger">台大資管系盧信銘教授</p>
+
+        <h2>題目敘述</h2>
+        <p>今天有一群人在為n面牆壁漆油漆，一開始都是顏色1，經過著色後會被覆蓋，變成其他顏色。今天如果有10面牆壁，然後替第2到5面牆壁漆顏色2，那麼總共會有6面牆壁顏色1，4面牆壁顏色2。若再替牆壁3到6漆顏色3，那麼會有5面牆壁顏色1，1面牆壁顏色2，4面牆壁顏色3。</p>
+
+        <h2>輸出輸入格式</h2>
+        <p>現在給定如下的資料輸入格式：第一行輸入牆壁n面和m次油漆，接下來的m行每行依順序輸入漆的牆壁的起點號碼、漆的牆壁的終點號碼，以及顏色代碼，都是合理的整數。輸出共有m段，於第 i 段輸出在全部油漆動作都完成後，第 i 次油漆之顏色的牆壁面數、一個空格，與該顏色代碼。段與段之間用一個分號隔開。</p>
+        <p>所有牆壁在最初都是顏色 1。</p>
+        <p>輸出依刷漆順序而非顏色編號順序</p>
+
+        <p class="texti-datain">如果輸入是</p>
+        <pre> <code>
+10 2
+2 5 2
+3 6 3
+        </code> </pre>
+        <p>則輸出應該是</p>
+        <pre> <code>
+1 2;4 3
+        </code> </pre>
+
+        <p class="texti-datain">如果輸入是</p>
+        <pre> <code>
+15 4
+2 3 3
+5 13 2
+3 5 1
+5 5 4
+        </code> </pre>
+        <p>則輸出應該是</p>
+        <pre> <code>
+? 3;? 2;? 1;? 4
+        </code> </pre>
+    </div>
+</body>
+</html>
