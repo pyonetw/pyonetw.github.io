@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Python 字彙練習</title>
+  <style>
+    :root {
+      --bg-color: #1c1124;
+      --text-color: white;
+      --accent-color: #b084dc;
+      --button-color: #8e4ad2;
+      --button-hover-color: #7124be;
+      --input-bg-color: #2a183c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2em 1em;
+    }
+
+    h1 {
+      color: var(--accent-color);
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 0.2em;
+    }
+
+    #word-display {
+      font-size: 1.5rem;
+      margin: 0.5em 0;
+      text-align: center;
+      word-break: break-word;
+    }
+
+    #input-box {
+      font-size: 1.5rem;
+      padding: 0.5em;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      border: 2px solid var(--accent-color);
+      border-radius: 10px;
+      background-color: var(--input-bg-color);
+      color: var(--text-color);
+      margin: 0.5em 0;
+    }
+
+    #score, #accuracy {
+      margin: 0.5em;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    #score {
+      display: none;
+    }
+
+    button {
+      background-color: var(--button-color);
+      color: white;
+      border: none;
+      padding: 0.7em;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 0.5em 0;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    button:hover {
+      background-color: var(--button-hover-color);
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 1.8rem; }
+      #word-display { font-size: 1.5rem; }
+      #input-box { font-size: 1.5rem; }
+      button { font-size: 1.5rem; }
+    }
+
+    @media (max-width: 768px) {
+      #score, #accuracy { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <h1 id="title">Python 字彙練習</h1>
+  <div id="word-display">請按「開始練習打字」</div>
+  <input type="text" id="input-box" disabled placeholder="輸入完畢後按 [Enter]..." />
+  <div id="score">分數: 0</div>
+  <div id="accuracy">正確率: 0%</div>
+  <button id="start-btn" onclick="startPractice()">開始練習打字</button>
+  <button id="lang-btn" onclick="toggleLanguage()">English</button>
+
+  <script>
+    const pythonKeywords = [
+      "False", "None", "True", "and", "as", "assert", "break", "class", "continue", "def", "del",
+      "elif", "else", "except", "finally", "for", "from", "global", "if", "import", "in", "is",
+      "lambda", "not", "or", "pass", "return", "try", "while", "with",
+    ];
+
+    const builtins = [
+      "abs", "ascii", "bool", "chr", "dict", "divmod", "enumerate", "eval", "filter", "float", "format",
+      "id", "input", "int", "len", "list", "map", "max", "min", "next", "open", "ord", "pow", "print",
+      "range", "round", "set", "slice", "sorted", "str", "sum", "super", "tuple", "type", "zip",
+    ];
+
+    const randomModule = [
+      "random.random", "random.randint", "random.choice", "random.shuffle", "random.uniform",
+      "random.sample", "random.seed",
+    ];
+
+    const mathModule = [
+      "math.ceil", "math.fabs", "math.floor", "math.fmod", "math.gcd", "math.log2", "math.pow",
+      "math.sqrt", "math.pi",
+    ];
+
+    const listMethods = [
+      "list.append", "list.extend", "list.insert", "list.remove", "list.pop", "list.clear",
+      "list.index", "list.count", "list.sort", "list.reverse", "list.copy",
+    ];
+
+    const dictMethods = [
+      "dict.clear", "dict.get", "dict.items", "dict.keys", "dict.pop", "dict.update", "dict.values",
+    ];
+
+    const setMethods = [
+      "set.add", "set.clear", "set.difference", "set.discard", "set.intersection", "set.pop",
+      "set.remove", "set.union", "set.update",
+    ];
+
+    const wordPool = [...new Set([
+      ...pythonKeywords,
+      ...builtins,
+      ...randomModule,
+      ...mathModule,
+      ...listMethods,
+      ...dictMethods,
+      ...setMethods
+    ])];
+
+    let words = [];
+    let current = 0;
+    let score = 0;
+    let correct = 0;
+    let lang = "zh";
+
+    const inputBox = document.getElementById("input-box");
+    const wordDisplay = document.getElementById("word-display");
+    const scoreDisplay = document.getElementById("score");
+    const accuracyDisplay = document.getElementById("accuracy");
+    const titleEl = document.getElementById("title");
+    const startBtn = document.getElementById("start-btn");
+    const langBtn = document.getElementById("lang-btn");
+
+    const i18n = {
+      zh: {
+        title: "Python 字彙練習",
+        start: "開始練習打字",
+        prompt: "請按「開始練習打字」",
+        done: "完成練習！",
+        placeholder: "輸入完畢後按 [Enter]...",
+        score: s => `分數: ${s}`,
+        accuracy: a => `正確率: ${a}%`,
+        langButton: "English"
+      },
+      en: {
+        title: "Python Typing Practice",
+        start: "Start Typing Practice",
+        prompt: "Press \"Start Typing Practice\"",
+        done: "Practice complete!",
+        placeholder: "Type the word and press [Enter]...",
+        score: s => `Score: ${s}`,
+        accuracy: a => `Accuracy: ${a}%`,
+        langButton: "中文"
+      }
+    };
+
+    function startPractice() {
+      words = shuffleArray(wordPool).slice(0, 50);
+      current = 0;
+      score = 0;
+      correct = 0;
+      inputBox.disabled = false;
+      inputBox.value = '';
+      inputBox.placeholder = i18n[lang].placeholder;
+      inputBox.focus();
+      updateDisplay();
+      updateWordDisplay();
+    }
+
+    inputBox.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        const typed = inputBox.value.trim();
+        if (typed === words[current]) {
+          score += 2;
+          correct++;
+        }
+        current++;
+        if (current < words.length) {
+          inputBox.value = '';
+        } else {
+          wordDisplay.innerHTML = i18n[lang].done;
+          inputBox.disabled = true;
+        }
+        updateDisplay();
+        updateWordDisplay();
+      }
+    });
+
+    inputBox.addEventListener("input", updateWordDisplay);
+
+    function updateDisplay() {
+      scoreDisplay.textContent = i18n[lang].score(score);
+      accuracyDisplay.textContent = i18n[lang].accuracy(((correct / (current || 1)) * 100).toFixed(1));
+    }
+
+    function updateWordDisplay() {
+      const currentWord = words[current] || "";
+      const typed = inputBox.value;
+      let html = "";
+
+      for (let i = 0; i < currentWord.length; i++) {
+        const correct = typed[i] === currentWord[i];
+        if (i < typed.length && correct) {
+          html += `<span style="color: var(--accent-color)">${currentWord[i]}</span>`;
+        } else {
+          html += `<span>${currentWord[i]}</span>`;
+        }
+      }
+
+      wordDisplay.innerHTML = html;
+    }
+
+    function shuffleArray(array) {
+      const a = [...array];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    function toggleLanguage() {
+      lang = lang === "zh" ? "en" : "zh";
+      titleEl.textContent = i18n[lang].title;
+      startBtn.textContent = i18n[lang].start;
+      langBtn.textContent = i18n[lang].langButton;
+      inputBox.placeholder = i18n[lang].placeholder;
+      if (current >= words.length || words.length === 0) {
+        wordDisplay.textContent = i18n[lang].prompt;
+      } else {
+        updateWordDisplay();
+      }
+      updateDisplay();
+    }
+  </script>
+</body>
+</html>

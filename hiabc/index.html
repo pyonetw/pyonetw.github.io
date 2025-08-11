@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>Hi ABC</title>
+    <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <style>
+        body, button, html, input, select {
+            font-family: "Microsoft JhengHei";
+            font-size: 18px;
+        }
+        h1 {
+            margin: 5px 20px;
+        }
+        .player-bg {
+            background-color: #addfa5;
+        }
+		.btn:hover {
+			cursor: pointer;
+		}
+        .btn-lg {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 2px;
+        }
+        .btn-main {
+            border: 1px solid #666;
+            padding: 8px 3px 8px 1px;
+            width: 2em;
+            border-radius: 0;
+        }
+        .face {
+            font-size: 48px;
+        }
+	</style>
+</head>
+<body>
+	<div>
+        <h1 class="text-center"><small>Hi ABC</small>
+            <span id="face" class="col-lg-1 text-right face">&#128513;</span>
+            <button id="btnAlpha1" class="btn btn-dark">1</button>
+            <button id="btnAlpha2" class="btn btn-dark">2</button>
+            <button id="btnAlpha3" class="btn btn-dark">3</button>
+            <button id="btnPlayerRabbit" class="btn btn-light">&#128007;</button>
+            <button id="btnPlayerCat" class="btn btn-light">&#128008;</button>
+            <button id="btnPlayerDog" class="btn btn-light">&#128021;</button>
+            <button id="btnPlayerPig" class="btn btn-light">&#128022;</button>
+            <button id="btnPlayerChick" class="btn btn-light">&#128036;</button>
+            <button id="btnPlayerAnt" class="btn btn-light">&#128028;</button>
+            <button id="btnPlayerHoneybee" class="btn btn-light">&#128029;</button>
+            <button id="btnPlayerBug" class="btn btn-light">&#128027;</button>
+        </h1>
+        <hr>
+
+        <div class="row">
+            <div id="board" class="col-lg-12 text-center">
+            </div>
+        </div>
+	</div>
+
+    <script src="/static/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            // global variables
+            player = '&#128007;';
+            food = ['&#127812;', '&#127815;', '&#127817;', '&#127820;', '&#127821;',
+                    '&#127822;', '&#127825;', '&#127826;', '&#127827;', '&#127828;',
+                    '&#127835;', '&#127839;', '&#127848;', '&#127849;', '&#127855;',
+                    '&#127865;', '&#129371;', '&#129380;', '&#127856;', '&#129367;',
+            ];
+            goodfaces = ['&#128513;', '&#128512;', '&#128526;', '&#128516;'];
+            badfaces = ['&#128518;', '&#128530;', '&#128534;', '&#128544;', '&#128562;', '&#128580;', '&#128548;', '&#128557;'];
+            alpha0 = [];
+            alpha1 = Array.from('asdfghjkl');
+            alpha2 = Array.from('qwertyuiop');
+            alpha3 = Array.from('zxcvbnm');
+            islower = true;
+            current = 0;
+            M = 7;
+            N = 16;
+            // local variables
+            var nums = initBoard(nums, 1);
+            // $('#btn1').text();
+            $('body').on('keyup', function(event) {
+                movePos(String.fromCharCode(event.which));
+            });
+
+            $('button[id^="btnAlpha"]').on('click', function() {
+                var version = parseInt(this.id.slice(-1));
+                nums = initBoard(nums, version);
+                // console.log(nums);
+            });
+
+            $('button[id^="btnPlayer"]').on('click', function() {
+                player = $(this).html();
+                nums = initBoard(nums, 1);
+                // console.log(nums);
+            });
+        });
+
+        function randInt(start, end) {
+            return Math.floor(Math.random() * (end-start+1)) + start;
+        }
+
+        function randShuffle(sequence) {
+            var aLen = sequence.length;
+            var ri = 0;
+            var tmp = '';
+            for (var i = 0; i < aLen; i++) {
+                x = randInt(0, aLen-1);
+                y = randInt(0, aLen-1);
+                tmp = sequence[x];
+                sequence[x] = sequence[y];
+                sequence[y] = tmp;
+            }
+            return sequence;
+        }
+
+        function initBoard(nums, version) {
+            var nums = [];
+            var items = [];
+            islower = !islower;
+
+            alpha0 = [];
+            if (version >= 1) {
+                alpha0 = alpha0.concat(alpha1);
+            }
+            if (version >= 2) {
+                alpha0 = alpha0.concat(alpha2);
+            }
+            if (version >= 3) {
+                alpha0 = alpha0.concat(alpha3);
+            }
+            // console.log(version);
+            // console.log(alpha0);
+
+            for (var i = 0; i < M; i++) {
+                for (var j = 0; j < N; j++) {
+                    a = i*N+j;
+                    nums.push(a);
+                    items.push('<button id="btn'+a+'" class="btn btn-lg btn-main">&nbsp;</button>');
+                }
+                items.push('<br>');
+            }
+            $('#face').html(goodfaces[0]);
+            $('#board').html(items.join(''));
+            nums = randShuffle(nums);
+            placeIcons(nums);
+            setLetters();
+            return nums;
+        }
+
+        function placeIcons(nums) {
+            current = nums[0];
+            $('#btn'+nums[0]).html(player);
+            $('#btn'+nums[0]).addClass('player-bg');
+            for (var i = 1; i <= food.length; i++) {
+                $('#btn'+nums[i]).html(food[i-1]);
+            }
+        }
+
+        function setLetters() {
+            var letters = randShuffle(alpha0).slice(0, 4);
+            if (!islower) {
+                for (var i = 0; i < 4; i++) {
+                    letters[i] = letters[i].toUpperCase();
+                }
+            }
+
+            if ((current-N) >= 0) {
+                $('#btn'+(current-N)).html(letters[0]);
+            }
+            if ((current+N) < M*N) {
+                $('#btn'+(current+N)).html(letters[1]);
+            }
+
+            var rightBound = ((Math.floor(current/N)+1)*N)-1;
+            if ((current+1) <= rightBound) {
+                $('#btn'+(current+1)).html(letters[2]);
+            }
+
+            var leftBound = ((Math.floor(current/N))*N);
+            if ((current-1) >= leftBound) {
+                $('#btn'+(current-1)).html(letters[3]);
+            }
+            // console.log(current, leftBound, rightBound);
+        }
+
+        function clearLetters() {
+            var bText = '';
+            for (var i = 0; i < M; i++) {
+                for (var j = 0; j < N; j++) {
+                    a = i*N+j;
+                    bText = $('#btn'+a).html().toUpperCase();
+                    if (bText >= 'A' && bText <= 'Z') {
+                        $('#btn'+a).html('&nbsp;');
+                    }
+                }
+            }
+        }
+
+        function movePos(keyCode) {
+            var isMove = false;
+            if (keyCode >= 1 && keyCode <= 3) {
+                $('#btnAlpha'+keyCode).click();
+            }
+            // console.log(keyCode);
+            $('#btn'+current).removeClass('player-bg');
+            if ((current-N) >= 0) {
+                if ($('#btn'+(current-N)).html().toUpperCase() == keyCode) {
+                    current = current-N;
+                    isMove = true;
+                }
+            }
+            if ((current+N) < M*N) {
+                if ($('#btn'+(current+N)).html().toUpperCase() == keyCode) {
+                    current = current+N;
+                    isMove = true;
+                }
+            }
+
+            var rightBound = ((Math.floor(current/N)+1)*N)-1;
+            if ((current+1) <= rightBound) {
+                if ($('#btn'+(current+1)).html().toUpperCase() == keyCode) {
+                    current = current+1;
+                    isMove = true;
+                }
+            }
+
+            var leftBound = ((Math.floor(current/N))*N);
+            if ((current-1) >= leftBound) {
+                if ($('#btn'+(current-1)).html().toUpperCase() == keyCode) {
+                    current = current-1;
+                    isMove = true;
+                }
+            }
+
+            if (keyCode >= 'A' && keyCode <= 'Z') {
+                if (isMove) {
+                    $('#face').html(goodfaces[randInt(0, goodfaces.length-1)]);
+                }
+                else {
+                    $('#face').html(badfaces[randInt(0, badfaces.length-1)]);
+                }
+            }
+
+            $('#btn'+current).addClass('player-bg');
+            $('#btn'+current).html(player);
+            clearLetters();
+            setLetters();
+        }
+    </script>
+</body>
+</html>

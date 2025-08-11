@@ -102,6 +102,20 @@ pre code {
     border-color: #2e7d8e;
 }
 
+.btn-udemy,
+.btn-udemy:focus,
+.btn-udemy:active {
+    color: #fff;
+    background-color: #7c0ec8;
+    border-color: #7c0ec8;
+}
+
+.btn-udemy:hover {
+    color: #fff;
+    background-color: #7c0ec8;
+    border-color: #7c0ec8;
+}
+
 .btn-copy {
     font-size: 14px;
     border-radius: 0;

@@ -30,6 +30,10 @@ h2 {
     color: #328401;
 }
 
+.fw-bold {
+    font-weight: bold;
+}
+
 ul {
     list-style-type: square;
 }
@@ -70,7 +74,7 @@ table, th, td {
     h2 {
         font-size: 4em;
     }
-    
+
     p, li {
         font-size: 3.2em;
         line-height: 1.5em;

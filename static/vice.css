@@ -7,16 +7,13 @@ body {
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 28px;
 }
 
 h2 {
-    color: #1023e0;
-    font-size: 20px;
-}
-
-.ex-container {
-    padding: 20px 12%;
+    color: #005174;
+    font-weight: bold;
+    font-size: 24px;
 }
 
 .text-topic {
@@ -31,15 +28,8 @@ h2 {
     color: #328401;
 }
 
-ul {
-    list-style-type: square;
-}
-
 p {
     line-height: 32px;
-}
-
-p, li {
     font-size: 18px;
 }
 
@@ -53,8 +43,23 @@ pre code {
     font-size: 18px;
 }
 
+ul {
+    list-style-type: square;
+}
+
 li {
-	padding: 5px 0;
+    font-size: 18px;
+    padding: 5px 0;
+}
+
+li.list-group-item {
+    color: #0066ff;
+    font-size: 20px;
+}
+
+a,
+a:hover {
+    text-decoration: none;
 }
 
 table {
