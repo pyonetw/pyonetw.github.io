@@ -1,0 +1,4 @@
+left: 0
+top: 220
+width: 1242
+height: 1242
